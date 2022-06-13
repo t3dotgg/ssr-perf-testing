@@ -13,8 +13,8 @@ export default function Content(props: any) {
       <h2>Time to respond on backend: {props.endedAt - props.startedAt}ms</h2>
       <h2>Time to render on backend: {timeElapsed}ms</h2>
       <h2>
-        Request latency (request to edge time, requires ssr):{" "}
-        <span id={requestLatency} />
+        Request latency (if this is negative it's because the request was
+        cached): <span id={requestLatency} />
         ms
       </h2>
       <h2>
