@@ -31,5 +31,13 @@ export function headers() {
 export default function Index() {
   const data = useLoaderData();
 
-  return <Content {...data} />;
+  return (
+    <Content {...data}>
+      <h1>This page is rendered on first request and then cached</h1>
+      <h4>
+        (That means all the ssr timings will be wrong because the times in them
+        are old)
+      </h4>
+    </Content>
+  );
 }

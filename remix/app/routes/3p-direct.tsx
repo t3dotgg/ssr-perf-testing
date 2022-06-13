@@ -25,5 +25,9 @@ export const loader: LoaderFunction = async (req) => {
 export default function Index() {
   const data = useLoaderData();
 
-  return <Content {...data} />;
+  return (
+    <Content {...data}>
+      <h1>This page hits the Github API on every request</h1>
+    </Content>
+  );
 }

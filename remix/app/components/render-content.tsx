@@ -8,14 +8,8 @@ export default function Content(props: any) {
 
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
+      {props.children}
       <h1>Profile: {props.login}</h1>
-      <h2>
-        Request that generated this page was STARTED at: {props.startedAt}
-      </h2>
-      <h2>Request that generated this page COMPLETED at: {props.endedAt}</h2>
-      <h2>
-        Request that generated this page RENDERED at: {renderedAt.getTime()}
-      </h2>
       <h2>Time to respond on backend: {props.endedAt - props.startedAt}ms</h2>
       <h2>Time to render on backend: {timeElapsed}ms</h2>
       <h2>

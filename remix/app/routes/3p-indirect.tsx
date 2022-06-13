@@ -26,5 +26,15 @@ export const loader: LoaderFunction = async (context) => {
 export default function Index() {
   const data = useLoaderData();
 
-  return <Content {...data} />;
+  return (
+    <Content {...data}>
+      <h1>
+        This page is rendered on every request but hits a cached version of the
+        github API INDIRECTLY
+      </h1>
+      <h4>
+        (So basically it calls a local, cached api instead of Github directly)
+      </h4>
+    </Content>
+  );
 }
