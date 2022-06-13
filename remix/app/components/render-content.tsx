@@ -25,6 +25,7 @@ export default function Content(props: any) {
         Request-to-paint time (Chrome only): <span id={perfFullTime} />
         ms
       </h2>
+      <a href="/">Back</a>
       <script>{`
       const currentTime = new Date();
 
