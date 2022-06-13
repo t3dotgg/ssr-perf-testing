@@ -13,7 +13,12 @@ export const loader: LoaderFunction = async (req) => {
 
   console.log("Time to fetch github info", timeElapsed);
 
-  return { startedAt: startedAt.getTime(), timeElapsed, ...githubProfile };
+  return {
+    startedAt: startedAt.getTime(),
+    endedAt: endedAt.getTime(),
+    timeElapsed,
+    ...githubProfile,
+  };
 };
 
 export default function Index() {
