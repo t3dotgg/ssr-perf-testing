@@ -1,6 +1,6 @@
 export default function Content(props: any) {
   const renderedAt = new Date();
-  const timeElapsed = renderedAt.getTime() - props.startedAt;
+  const timeElapsed = renderedAt.getTime() - props.endedAt;
 
   const requestLatency = "request-latency";
   const fillId = "fill-with-render-time";
@@ -10,8 +10,8 @@ export default function Content(props: any) {
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
       {props.children}
       <h1>Profile: {props.login}</h1>
-      <h2>Time to respond on backend: {props.endedAt - props.startedAt}ms</h2>
-      <h2>Time to render on backend: {timeElapsed}ms</h2>
+      <h2>Time to respond in loader: {props.endedAt - props.startedAt}ms</h2>
+      <h2>Time to render AFTER loader (SSR React Time): {timeElapsed}ms</h2>
       <h2>
         Request latency (if this is negative it's because the request was
         cached): <span id={requestLatency} />
